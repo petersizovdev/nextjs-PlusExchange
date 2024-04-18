@@ -37,6 +37,7 @@ ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
+  background-color: var(--black-secondary);
 }
 
 ol,
@@ -52,5 +53,5 @@ img {
 .container {
   max-width: 1980px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 4rem;
 }
