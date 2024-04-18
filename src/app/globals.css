@@ -6,6 +6,12 @@
   --black-secondary: #353334;
   --green: #55ba6f;
   --red: #e44d4d;
+
+  --backdrop: #222222;
+  --radius: 16;
+  --border: 1;
+  --backup-border: var(--backdrop);
+  --size: 100;
 }
 
 html {
@@ -54,4 +60,29 @@ img {
   max-width: 1980px;
   margin: 0 auto;
   padding: 2rem 4rem;
+}
+
+/* Slider.module.css */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--white-bone);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 30px;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--white-bone) !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--white-bone);
 }
