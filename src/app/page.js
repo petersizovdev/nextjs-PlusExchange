@@ -7,8 +7,14 @@ export default function Home() {
     <div className={styles.home}>
       <Slider />
       <div className={styles.trends}>
-        <Card />
-        <Card />
+        <div className={styles.column}>
+          <h1>Топ крипто</h1>
+          <Card />
+        </div>
+        <div className={styles.column}>
+          <h1>Новости</h1>
+          <Card />
+        </div>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
-  --white: #e8e5e5;
-  --white-bone: #dcd7d8;
-  --black: #222222;
-  --black-secondary: #353334;
+  --white: #dcd7d8;
+  --black: #2222227e;
+  --black-secondary: #000;
   --green: #55ba6f;
   --red: #e44d4d;
 
@@ -13,7 +12,9 @@
   --backup-border: var(--backdrop);
   --size: 100;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 html {
   box-sizing: border-box;
   font-size: 16px;
@@ -44,6 +45,7 @@ ul {
   padding: 0;
   font-weight: normal;
   background-color: var(--black-secondary);
+  color: var(--white);
 }
 
 ol,
@@ -57,7 +59,7 @@ img {
 }
 
 .container {
-  max-width: 1980px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 2rem 4rem;
 }
@@ -66,7 +68,7 @@ img {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--white-bone);
+  color: var(--white);
 }
 
 .swiper-button-next:after,
@@ -80,9 +82,9 @@ img {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--white-bone) !important;
+  background-color: var(--white) !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: var(--white-bone);
+  background-color: var(--white);
 }
