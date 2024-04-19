@@ -17,7 +17,7 @@ const Accordion = () => {
   }
 
   return (
-    <IconContext.Provider value={{ color: "#00ff89", size: "25px" }}>
+    <IconContext.Provider value={{ color: "#02cc6f", size: "25px" }}>
       <div className={styles.accordionsection}>
         <div className={styles.container}>
           {Data.map((item, index) => {
