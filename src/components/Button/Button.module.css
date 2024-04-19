@@ -9,11 +9,11 @@
 
 .accent {
   background-color: var(--white);
-  color: var(--black);
+  color: var(--black-bg);
 }
 
 .outlined {
-  background-color: var(--black);
+  background-color: var(--black-glass);
   color: var(--white);
 }
 
