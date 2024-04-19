@@ -1,0 +1,35 @@
+.coin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+  gap: 2rem;
+}
+.coin-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-width: 6rem;
+}
+.coin-section img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+}
+.coin-vol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8rem;
+}
+
+.coin-symbol {
+  text-transform: uppercase;
+}
+
+.red {
+  color: var(--red);
+}
+.green {
+  color: var(--green);
+}

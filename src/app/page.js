@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Card from "@/components/Card/Card";
 import Welcome from "@/components/Welcome/Welcome";
 import Accordion from "@/components/Accordion/Accordion";
+import Trending from "@/components/Trending/Trending";
 
 export default function Home() {
   return (
@@ -12,7 +13,10 @@ export default function Home() {
       <div className={styles.trends}>
         <div className={styles.column}>
           <h3>Топ крипто</h3>
-          <Card />
+          <Card>
+            {" "}
+            <Trending />
+          </Card>
         </div>
         <div className={styles.column}>
           <h3>Новости</h3>
