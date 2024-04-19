@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerBlock {
+  width: 200px;
+  gap: 0.5rem;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* добавленное свойство */
+}
+
+.footerBlock span {
+  text-align: center;
+  color: var(--white-glass);
+}
+.logo {
+  width: 10rem;
+  user-select: none;
+  pointer-events: none;
+}
+.path {
+  fill: var(--black-glass);
+}
