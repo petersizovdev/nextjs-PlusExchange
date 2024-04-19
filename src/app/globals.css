@@ -6,6 +6,7 @@
   --black-glass: #22222280;
   --white-glass: #dcd7d880;
   --green: #55ba6f;
+  --green-secondary: #2ebfa5;
   --red: #e44d4d;
 
   --backdrop: #222222;
@@ -99,4 +100,3 @@ h2 {
 h3 {
   font-size: 2rem;
 }
-

@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .footerBlock {
   width: 200px;
   gap: 0.5rem;
@@ -21,9 +22,15 @@
 .right {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end; /* добавленное свойство */
+  justify-content: flex-end;
+  gap: 2rem;
 }
-
+.right path {
+  fill: var(--white-glass);
+}
+.right svg {
+  width: 2.5rem;
+}
 .footerBlock span {
   text-align: center;
   color: var(--white-glass);

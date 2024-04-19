@@ -2,6 +2,7 @@ import Slider from "@/components/Slider/Slider";
 import styles from "./page.module.css";
 import Card from "@/components/Card/Card";
 import Welcome from "@/components/Welcome/Welcome";
+import Accordion from "@/components/Accordion/Accordion";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <Card />
         </div>
       </div>
+      <Accordion />
     </div>
   );
 }
