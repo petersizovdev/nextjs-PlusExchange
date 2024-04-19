@@ -14,13 +14,14 @@ export default function Home() {
         <div className={styles.column}>
           <h3>Топ крипто</h3>
           <Card>
-            {" "}
             <Trending />
           </Card>
         </div>
         <div className={styles.column}>
           <h3>Новости</h3>
-          <Card />
+          <Card>
+            <Trending />
+          </Card>
         </div>
       </div>
       <Accordion />
