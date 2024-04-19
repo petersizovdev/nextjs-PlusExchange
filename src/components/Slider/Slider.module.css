@@ -3,7 +3,9 @@
   max-height: 720px;
   border-radius: 1rem;
   margin: 0 auto 10rem auto;
+  background-color: var(--black-glass);
 }
 .slider img {
   width: 100%;
+  opacity: 0;
 }

@@ -1,4 +1,6 @@
+import Card from "../Card/Card";
 import CardButton from "../Card/CardButton";
+
 import styles from "./Welcome.module.css";
 
 const Welcome = () => {
@@ -15,8 +17,7 @@ const Welcome = () => {
         </div>
       </div>
       <div className={styles.welcomeTest}>
-        <input></input>
-        <input></input>
+
       </div>
     </div>
   );

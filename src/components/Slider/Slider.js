@@ -9,7 +9,7 @@ import styles from "./Slider.module.css";
 
 export default function App() {
   return (
-    <div  className={styles.slider}>
+    <div className={styles.slider}>
       <Swiper
         effect={"fade"}
         autoplay={{
@@ -22,28 +22,14 @@ export default function App() {
         modules={[EffectFade, Autoplay, Pagination]}
         className={styles.slider}
       >
+        <SwiperSlide></SwiperSlide>
+        <SwiperSlide></SwiperSlide>
+        <SwiperSlide></SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-            alt="slide1"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-2.jpg"
-            alt="slide2"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://swiperjs.com/demos/images/nature-3.jpg"
-            alt="slide3"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
+
           <img
             src="https://swiperjs.com/demos/images/nature-4.jpg"
-            alt="slide4"
+            alt="slide"
           />
         </SwiperSlide>
       </Swiper>

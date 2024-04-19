@@ -3,7 +3,6 @@
 import React, { useEffect } from "react";
 import styles from "./Card.module.css";
 import cn from "classnames";
-import Trending from "../Trending/Trending";
 
 const Card = ({ children }) => {
   const syncPointer = ({ x, y }) => {

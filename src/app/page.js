@@ -16,11 +16,31 @@ export default function Home() {
           <Card>
             <Trending />
           </Card>
+          <Card>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </Card>
         </div>
         <div className={styles.column}>
           <h3>Новости</h3>
           <Card>
             <Trending />
+          </Card>
+          <Card>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </Card>
         </div>
       </div>
