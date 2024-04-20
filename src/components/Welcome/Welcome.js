@@ -2,7 +2,7 @@ import Image from "next/image";
 import blub from "@/assetst/svg/bbblurry.svg";
 import blub2 from "@/assetst/svg/bbblurry1.svg";
 import blub3 from "@/assetst/svg/bbblurry2.svg";
-import CardButton from "../Card/CardButton";
+import Card from "../Card/Card";
 
 import styles from "./Welcome.module.css";
 
@@ -13,29 +13,29 @@ const Welcome = () => {
         <h1>Plus Exchange</h1>
         <div className={styles.goto}>
           <h2>
-            Ваш верны спутник в мире <br />
+            Ваш верный спутник в мире <br />
             децентрализованных финансов{" "}
           </h2>
-          <CardButton>Перейти к обмену</CardButton>
+          <Card className='cardButton'>Перейти к обмену</Card>
         </div>
       </div>
       <Image
         className={styles.blub}
         priority
         src={blub2}
-        alt="Follow us on Twitter"
+        alt=""
       />
       <Image
         className={styles.blub2}
         priority
         src={blub}
-        alt="Follow us on Twitter"
+        alt=""
       />
       <Image
         className={styles.blub3}
         priority
         src={blub3}
-        alt="Follow us on Twitter"
+        alt=""
       />
     </div>
   );

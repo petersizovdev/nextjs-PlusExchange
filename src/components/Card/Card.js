@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import styles from "./Card.module.css";
 import cn from "classnames";
 
-const Card = ({ children }) => {
+const Card = ({ children, className }) => {
   const syncPointer = ({ x, y }) => {
     document.documentElement.style.setProperty("--x", x.toFixed(2));
     document.documentElement.style.setProperty(
@@ -27,7 +27,7 @@ const Card = ({ children }) => {
 
   return (
     <>
-      <div className={cn(styles["card"], styles["glow"], styles["cardItems"])}>
+      <div className={cn(styles["card"], styles["glow"], styles[className])}>
         <div className={styles.glow}> </div>
         {children}
       </div>

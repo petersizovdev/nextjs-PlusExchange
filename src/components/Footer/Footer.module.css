@@ -27,6 +27,7 @@
 }
 .right path {
   fill: var(--white-glass);
+  cursor: pointer;
 }
 .right svg {
   width: 2.5rem;
@@ -34,6 +35,8 @@
 .footerBlock span {
   text-align: center;
   color: var(--white-glass);
+  cursor: pointer;
+  font-size: 1rem;
 }
 .logo {
   width: 10rem;
