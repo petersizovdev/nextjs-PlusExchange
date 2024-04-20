@@ -1,6 +1,5 @@
 .home {
   margin: 4rem 0;
-  
 }
 .trends {
   display: flex;
@@ -14,4 +13,38 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+.leftCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+.cardImage {
+  width: 8rem;
+  filter: invert(0.9);
+
+  cursor: pointer;
+  z-index: 9;
+}
+
+.leftCardText {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 0.5rem;
+  margin-top: -1rem;
+  cursor: pointer;
+  z-index: 99;
+}
+.rigntCardText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: -1rem;
+  gap: 0.5rem;
+  cursor: pointer;
+  z-index: 99;
 }

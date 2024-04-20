@@ -44,5 +44,5 @@
   pointer-events: none;
 }
 .path {
-  fill: var(--black-glass);
+  fill: var(--white-glass);
 }
