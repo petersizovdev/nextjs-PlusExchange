@@ -1,4 +1,7 @@
-import Card from "../Card/Card";
+import Image from "next/image";
+import blub from "@/assetst/svg/bbblurry.svg";
+import blub2 from "@/assetst/svg/bbblurry1.svg";
+import blub3 from "@/assetst/svg/bbblurry2.svg";
 import CardButton from "../Card/CardButton";
 
 import styles from "./Welcome.module.css";
@@ -16,9 +19,24 @@ const Welcome = () => {
           <CardButton>Перейти к обмену</CardButton>
         </div>
       </div>
-      <div className={styles.welcomeTest}>
-
-      </div>
+      <Image
+        className={styles.blub}
+        priority
+        src={blub2}
+        alt="Follow us on Twitter"
+      />
+      <Image
+        className={styles.blub2}
+        priority
+        src={blub}
+        alt="Follow us on Twitter"
+      />
+      <Image
+        className={styles.blub3}
+        priority
+        src={blub3}
+        alt="Follow us on Twitter"
+      />
     </div>
   );
 };

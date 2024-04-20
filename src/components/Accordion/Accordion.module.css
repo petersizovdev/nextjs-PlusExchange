@@ -14,7 +14,7 @@
 .wrap {
   background: none;
   display: flex;
-  color: white;
+  color: var(--white);
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -24,11 +24,11 @@
 
 .dropdown {
   height: 0px;
-  color: white;
+  color: var(--white);
 }
 .dropdownopen {
   height: 100px;
-  color: white;
+  color: var(--white);
 }
 
 .dropdownopen p {
@@ -38,6 +38,6 @@
 
 .seporator {
   width: 100%;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--white);
   margin: 2rem 0;
 }

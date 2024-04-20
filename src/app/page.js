@@ -8,6 +8,7 @@ import Trending from "@/components/Trending/Trending";
 export default function Home() {
   return (
     <div className={styles.home}>
+
       <Welcome />
       <Slider />
       <div className={styles.trends}>
