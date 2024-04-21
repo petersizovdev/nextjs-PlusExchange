@@ -12,7 +12,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+}
+.column h3{
+margin-bottom: 1rem;
 }
 .leftCard {
   display: flex;
@@ -20,12 +23,12 @@
   align-items: center;
   padding: 2rem;
   cursor: pointer;
+
 }
 
 .cardImage {
   width: 8rem;
   filter: invert(0.9);
-
   cursor: pointer;
   z-index: 9;
 }
@@ -47,4 +50,11 @@
   gap: 0.5rem;
   cursor: pointer;
   z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .trends {
+    flex-direction: column;
+    gap: 6rem;
+  }
 }

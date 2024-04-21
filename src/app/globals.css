@@ -61,9 +61,10 @@ img {
 }
 
 .container {
-  max-width: 1920px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 2rem 4rem;
+  overflow: hidden;
 }
 
 /* Slider.module.css */
@@ -95,11 +96,60 @@ h1 {
   font-size: 8rem;
 }
 h2 {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 h3 {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 h4 {
-  font-size: 1rem;
+  font-size: 2.5rem;
+}
+h5 {
+  font-size: 2rem;
+}
+h6 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1.25rem;
+}
+
+
+html,
+body {
+  overflow-x: hidden !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  min-width: 425px; /* Suppose you want minimum width of 1000px */
+  width: auto !important; /* Firefox will set width as auto */
+  width: 425px; /* As IE6 ignores !important it will set width as 1000px; */
+}
+
+@media (max-width: 1160px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 860px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (max-width: 680px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media (max-width: 520px) {
+  html {
+    font-size: 6px;
+  }
 }

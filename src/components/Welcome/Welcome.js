@@ -12,13 +12,14 @@ const Welcome = () => {
       <div className={styles.welcomeText}>
         <h1>Plus Exchange</h1>
         <div className={styles.goto}>
-          <h2>
+          <h3>
             Ваш верный спутник в мире <br />
             децентрализованных финансов{" "}
-          </h2>
-          <Card className='cardButton'>Перейти к обмену</Card>
+          </h3>
+          <Card className="cardButton">Перейти к обмену</Card>
         </div>
       </div>
+      {/* 
       <Image
         className={styles.blub}
         priority
@@ -36,7 +37,7 @@ const Welcome = () => {
         priority
         src={blub3}
         alt=""
-      />
+      />*/}
     </div>
   );
 };

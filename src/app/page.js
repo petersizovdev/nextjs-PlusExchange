@@ -17,37 +17,36 @@ export default function Home() {
       <Slider />
       <div className={styles.trends}>
         <div className={styles.column}>
-          <h3>Топ крипто</h3>
+          <h4>Топ крипто</h4>
           <Card className="cardItems">
             <Trending />
           </Card>
           <Card className="cardItems">
             <div className={styles.leftCard}>
-              
               <Image className={styles.cardImage} src={Screener1} alt="" />
 
               <div className={styles.leftCardText}>
-                <h2>Скринер</h2>
-                <h3>
+                <h3>Скринер</h3>
+                <h5>
                   Вся информация <br />в одном месте
-                </h3>
+                </h5>
               </div>
             </div>
           </Card>
         </div>
         <div className={styles.column}>
-          <h3>Новости</h3>
+          <h4>Новости</h4>
           <Card className="cardItems">
             <Trending />
           </Card>
           <Card className="cardItems">
             <div className={styles.leftCard}>
               <div className={styles.rigntCardText}>
-                <h2>Обмен</h2>
-                <h3>
+                <h3>Обмен</h3>
+                <h5>
                   Агрегированный <br />
                   пул ликвидности
-                </h3>
+                </h5>
               </div>
               <Image className={styles.cardImage} src={Swap1} alt="" />
             </div>

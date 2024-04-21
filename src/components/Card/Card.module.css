@@ -2,7 +2,6 @@
   width: fit-content;
   background-color: var(--black-glass);
   backdrop-filter: blur(5px);
-  
 }
 .cardItems {
   width: 100%;
@@ -17,7 +16,6 @@
   font-size: 2rem;
 }
 
-/* Glow specific styles */
 .glow {
   --border-size: 1px;
   --spotlight-size: 100px;
@@ -69,4 +67,10 @@
 .glow > .glow::before {
   inset: -5px;
   border-width: 5px;
+}
+
+@media (max-width: 768px) {
+  .glow {
+    --spotlight-size: 200px;
+  }
 }
