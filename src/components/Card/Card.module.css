@@ -16,6 +16,13 @@
   padding: 1rem;
   font-size: 2rem;
 }
+.cardAddButton {
+  width: 100%;
+  --card-border: 0.5rem;
+  border-radius: var(--card-border);
+  padding: 1rem;
+  font-size: 2rem;
+}
 
 .glow {
   --border-size: 1px;
