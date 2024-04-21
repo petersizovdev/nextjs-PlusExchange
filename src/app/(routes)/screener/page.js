@@ -33,7 +33,7 @@ export default function Screener() {
           />
         </div>
         <div className={styles.rightPanel}>
-          <Button className="outlined">Добваить палель</Button>
+          <Button className="outlined">Обновить</Button>
           <div className={styles.marketNews}></div>
         </div>
       </div>
