@@ -19,7 +19,7 @@ const Welcome = () => {
           <Card className="cardButton">Перейти к обмену</Card>
         </div>
       </div>
-      {/* 
+
       <Image
         className={styles.blub}
         priority
@@ -37,7 +37,7 @@ const Welcome = () => {
         priority
         src={blub3}
         alt=""
-      />*/}
+      />
     </div>
   );
 };
