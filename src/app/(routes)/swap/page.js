@@ -8,7 +8,7 @@ export default function Swap() {
         <h5>Gas:</h5>
         <Button className="stock">⚙️</Button>
       </div>
-      <input placeholder="0.0" type="number" inputMode="numeric" ></input>
+      <input placeholder="0.0" type="number" inputMode="numeric"></input>
       <div className={styles.terminalSwap}>
         <Button className="stock">⇅</Button>
       </div>

@@ -9,6 +9,7 @@ import Screener from "@/assetst/svg/screener.svg";
 import Swap from "@/assetst/svg/swap.svg";
 import Screener1 from "@/assetst/svg/screener1.svg";
 import Swap1 from "@/assetst/svg/swap1.svg";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,36 +22,48 @@ export default function Home() {
           <Card className="cardItems">
             <Trending />
           </Card>
-          <Card className="cardItems">
-            <div className={styles.leftCard}>
-              <Image className={styles.cardImage} src={Screener1} alt="" />
+          <Link
+            className={styles.cardLink}
+            style={{ textDecoration: "none", color: "inherit" }}
+            href="/screener"
+          >
+            <Card className="cardItems">
+              <div className={styles.leftCard}>
+                <Image className={styles.cardImage} src={Screener1} alt="" />
 
-              <div className={styles.leftCardText}>
-                <h3>Скринер</h3>
-                <h5>
-                  Вся информация <br />в одном месте
-                </h5>
+                <div className={styles.leftCardText}>
+                  <h3>Скринер</h3>
+                  <h5>
+                    Вся информация <br />в одном месте
+                  </h5>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </Link>
         </div>
         <div className={styles.column}>
           <h4>Новости</h4>
           <Card className="cardItems">
             <Trending />
           </Card>
-          <Card className="cardItems">
-            <div className={styles.leftCard}>
-              <div className={styles.rigntCardText}>
-                <h3>Обмен</h3>
-                <h5>
-                  Агрегированный <br />
-                  пул ликвидности
-                </h5>
+          <Link
+            className={styles.cardLink}
+            style={{ textDecoration: "none", color: "inherit" }}
+            href="/swap"
+          >
+            <Card className="cardItems">
+              <div className={styles.leftCard}>
+                <div className={styles.rigntCardText}>
+                  <h3>Обмен</h3>
+                  <h5>
+                    Агрегированный <br />
+                    пул ликвидности
+                  </h5>
+                </div>
+                <Image className={styles.cardImage} src={Swap1} alt="" />
               </div>
-              <Image className={styles.cardImage} src={Swap1} alt="" />
-            </div>
-          </Card>
+            </Card>
+          </Link>
         </div>
       </div>
       <Accordion />

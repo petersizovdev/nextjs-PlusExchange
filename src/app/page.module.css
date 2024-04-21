@@ -17,18 +17,19 @@
 .column h3 {
   margin-bottom: 1rem;
 }
+.cardLink {
+  width: 100%;
+}
 .leftCard {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  cursor: pointer;
 }
 
 .cardImage {
   width: 8rem;
   filter: invert(0.9);
-  cursor: pointer;
   z-index: 9;
 }
 
@@ -38,7 +39,6 @@
   text-align: right;
   gap: 0.5rem;
   margin-top: -1rem;
-  cursor: pointer;
   z-index: 99;
 }
 .rigntCardText {
@@ -47,7 +47,6 @@
   text-align: left;
   margin-top: -1rem;
   gap: 0.5rem;
-  cursor: pointer;
   z-index: 99;
 }
 
