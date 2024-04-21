@@ -14,8 +14,8 @@
   align-items: center;
   gap: 2rem;
 }
-.column h3{
-margin-bottom: 1rem;
+.column h3 {
+  margin-bottom: 1rem;
 }
 .leftCard {
   display: flex;
@@ -23,7 +23,6 @@ margin-bottom: 1rem;
   align-items: center;
   padding: 2rem;
   cursor: pointer;
-
 }
 
 .cardImage {

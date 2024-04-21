@@ -5,7 +5,7 @@ import blub3 from "@/assetst/svg/bbblurry2.svg";
 import Card from "../Card/Card";
 
 import styles from "./Welcome.module.css";
-import Link from 'next/link';
+import Link from "next/link";
 
 const Welcome = () => {
   return (
@@ -17,28 +17,15 @@ const Welcome = () => {
             Ваш верный спутник в мире <br />
             децентрализованных финансов{" "}
           </h3>
-          <Link href="/swap"><Card className="cardButton">Перейти к обмену</Card></Link>
+          <Link style={{ textDecoration: "none",color:'inherit' }} href="/swap">
+            <Card className="cardButton">Перейти к обмену</Card>
+          </Link>
         </div>
       </div>
 
-      <Image
-        className={styles.blub}
-        priority
-        src={blub2}
-        alt=""
-      />
-      <Image
-        className={styles.blub2}
-        priority
-        src={blub}
-        alt=""
-      />
-      <Image
-        className={styles.blub3}
-        priority
-        src={blub3}
-        alt=""
-      />
+      <Image className={styles.blub} priority src={blub2} alt="" />
+      <Image className={styles.blub2} priority src={blub} alt="" />
+      <Image className={styles.blub3} priority src={blub3} alt="" />
     </div>
   );
 };
