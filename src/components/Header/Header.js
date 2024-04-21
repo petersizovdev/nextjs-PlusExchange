@@ -1,10 +1,11 @@
 import styles from "./Header.module.css";
 import Button from "../Button/Button";
+import Link from 'next/link';
 
 const Header = () => {
   return (
     <div className={styles.header}>
-      <div className={styles.logosvg}>
+      <Link href="/"><div className={styles.logosvg}>
         <svg
           className={styles.logo}
           width="522"
@@ -21,7 +22,7 @@ const Header = () => {
             fill="#283489"
           />
         </svg>
-      </div>
+      </div></Link>
       <div className={styles.nav}>
         <Button className="accent">Подключить кошелёк</Button>
         <Button className="outlined">EN</Button>
