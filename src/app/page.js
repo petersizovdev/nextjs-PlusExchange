@@ -10,6 +10,7 @@ import Swap from "@/assetst/svg/swap.svg";
 import Screener1 from "@/assetst/svg/screener1.svg";
 import Swap1 from "@/assetst/svg/swap1.svg";
 import Link from "next/link";
+import News from "@/components/News/News";
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
         <div className={styles.column}>
           <h4>Новости</h4>
           <Card className="cardItems">
-            <Trending />
+            <News />
           </Card>
           <Link
             className={styles.cardLink}

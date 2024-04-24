@@ -1,0 +1,12 @@
+.list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 24px;
+    padding: 24px;
+    color: aliceblue;
+    background-color: rgb(46, 46, 46);
+
+}
