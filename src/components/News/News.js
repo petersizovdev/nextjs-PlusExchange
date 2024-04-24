@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./News.module.css";
 import { getNews } from "@/api/apiNews";
-import NewsList from "./NewsList";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -32,7 +31,27 @@ const News = () => {
 
   return (
     <main className={styles.main}>
-      <NewsList news={news} />
+      {news.map((newsItem) => (
+        <div key={newsItem.id} className={styles.item}>
+          <div className={styles.titleImg}>
+            <img
+              src={newsItem.image}
+              alt="."
+              className={styles.image}
+              onError={(event) => (event.target.style.display = "none")}
+            />
+          </div>
+
+          <div className={styles.info}>
+            <p className={styles.title}>{newsItem.title}</p>
+            <p className={styles.description}>{newsItem.description}</p>
+            <p className={styles.extra}>by {newsItem.author}</p>
+            <p className={styles.extra}>
+              {new Date(newsItem.published).toLocaleString()}
+            </p>
+          </div>
+        </div>
+      ))}
     </main>
   );
 };
