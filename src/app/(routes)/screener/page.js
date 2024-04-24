@@ -10,6 +10,7 @@ import {
 } from "react-tradingview-embed";
 import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
+import News from '@/components/News/News';
 
 export default function Screener() {
   return (
@@ -34,7 +35,7 @@ export default function Screener() {
         </div>
         <div className={styles.rightPanel}>
           <Button className="outlined">Обновить</Button>
-          <div className={styles.marketNews}></div>
+          <div className={styles.marketNews}><News/></div>
         </div>
       </div>
     </div>
