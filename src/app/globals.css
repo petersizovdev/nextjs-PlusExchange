@@ -27,9 +27,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
