@@ -4,7 +4,7 @@
   align-items: center;
 }
 .logo {
-  width: 20rem;
+  width: 60%;
   user-select: none;
   pointer-events: none;
 }

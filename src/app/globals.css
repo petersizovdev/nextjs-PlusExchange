@@ -37,13 +37,13 @@ html {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-
 }
 
 body,

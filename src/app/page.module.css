@@ -5,8 +5,9 @@
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
+
 .column {
   width: 100%;
   display: flex;

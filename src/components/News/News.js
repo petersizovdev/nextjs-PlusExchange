@@ -44,11 +44,12 @@ const News = () => {
 
           <div className={styles.info}>
             <p className={styles.title}>{newsItem.title}</p>
-            <p className={styles.description}>{newsItem.description}</p>
-            <p className={styles.extra}>by {newsItem.author}</p>
-            <p className={styles.extra}>
-              {new Date(newsItem.published).toLocaleString()}
+            <p className={styles.description}>
+              {newsItem.description.split(" ").slice(0, 18).join(" ") +
+                (newsItem.description.split(" ").length > 18 ? "..." : "")}
             </p>
+
+            <p className={styles.extra}>by {newsItem.author}</p>
           </div>
         </div>
       ))}

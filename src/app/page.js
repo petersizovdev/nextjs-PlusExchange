@@ -16,56 +16,61 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Welcome />
+
       <Slider />
+
       <div className={styles.trends}>
         <div className={styles.column}>
           <h4>Топ крипто</h4>
           <Card className="cardItems">
             <Trending />
           </Card>
-          <Link
-            className={styles.cardLink}
-            style={{ textDecoration: "none", color: "inherit" }}
-            href="/screener"
-          >
-            <Card className="cardItems">
-              <div className={styles.leftCard}>
-                <Image className={styles.cardImage} src={Screener1} alt="" />
-
-                <div className={styles.leftCardText}>
-                  <h3>Скринер</h3>
-                  <h5>
-                    Вся информация <br />в одном месте
-                  </h5>
-                </div>
-              </div>
-            </Card>
-          </Link>
         </div>
         <div className={styles.column}>
           <h4>Новости</h4>
           <Card className="cardItems">
             <News />
           </Card>
-          <Link
-            className={styles.cardLink}
-            style={{ textDecoration: "none", color: "inherit" }}
-            href="/swap"
-          >
-            <Card className="cardItems">
-              <div className={styles.leftCard}>
-                <div className={styles.rigntCardText}>
-                  <h3>Обмен</h3>
-                  <h5>
-                    Агрегированный <br />
-                    пул ликвидности
-                  </h5>
-                </div>
-                <Image className={styles.cardImage} src={Swap1} alt="" />
-              </div>
-            </Card>
-          </Link>
         </div>
+      </div>
+
+      <div className={styles.trends}>
+        <Link
+          className={styles.cardLink}
+          style={{ textDecoration: "none", color: "inherit" }}
+          href="/swap"
+        >
+          <Card className="cardItems">
+            <div className={styles.leftCard}>
+              <Image className={styles.cardImage} src={Swap1} alt="" />
+              <div className={styles.rigntCardText}>
+                <h3>Обмен</h3>
+                <h5>
+                  Агрегированный <br />
+                  пул ликвидности
+                </h5>
+              </div>
+            </div>
+          </Card>
+        </Link>
+
+        <Link
+          className={styles.cardLink}
+          style={{ textDecoration: "none", color: "inherit" }}
+          href="/screener"
+        >
+          <Card className="cardItems">
+            <div className={styles.leftCard}>
+              <div className={styles.leftCardText}>
+                <h3>Скринер</h3>
+                <h5>
+                  Вся информация <br />в одном месте
+                </h5>
+              </div>
+              <Image className={styles.cardImage} src={Screener1} alt="" />
+            </div>
+          </Card>
+        </Link>
       </div>
       <Accordion />
     </div>

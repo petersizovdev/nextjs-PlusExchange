@@ -1,11 +1,11 @@
 .card {
   width: fit-content;
   background-color: var(--black-glass);
-  backdrop-filter: blur(5px);
 }
 
 .cardItems {
   width: 100%;
+ 
   --card-border: 1rem;
   border-radius: var(--card-border);
 }

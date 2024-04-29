@@ -27,16 +27,15 @@ const Header = () => {
       </Link>
       <div className={styles.nav}>
         <Link href="/swap">
-          <Button className="accent">Обмен</Button>
+          <Button className="outlined">Обмен</Button>
         </Link>
         <Link href="/screener">
-          <Button className="accent">Скринер</Button>
+          <Button className="outlined">Скринер</Button>
         </Link>
         <Link href="/">
-          <Button className="accent">Аккаунт</Button>
+          <Button className="outlined">Аккаунт</Button>
         </Link>
         <Button className="outlined">EN</Button>
-        <Button className="outlined">☀︎</Button>
       </div>
     </div>
   );
