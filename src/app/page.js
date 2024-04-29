@@ -38,16 +38,15 @@ export default function Home() {
         <Link
           className={styles.cardLink}
           style={{ textDecoration: "none", color: "inherit" }}
-          href="/swap"
+          href="/screener"
         >
           <Card className="cardItems">
             <div className={styles.leftCard}>
-              <Image className={styles.cardImage} src={Swap1} alt="" />
-              <div className={styles.rigntCardText}>
-                <h3>Обмен</h3>
+              <Image className={styles.cardImage} src={Screener1} alt="" />
+              <div className={styles.leftCardText}>
+                <h3>Скринер</h3>
                 <h5>
-                  Агрегированный <br />
-                  пул ликвидности
+                  Вся информация <br />в одном месте
                 </h5>
               </div>
             </div>
@@ -57,17 +56,18 @@ export default function Home() {
         <Link
           className={styles.cardLink}
           style={{ textDecoration: "none", color: "inherit" }}
-          href="/screener"
+          href="/swap"
         >
           <Card className="cardItems">
             <div className={styles.leftCard}>
-              <div className={styles.leftCardText}>
-                <h3>Скринер</h3>
+              <div className={styles.rigntCardText}>
+                <h3>Обмен</h3>
                 <h5>
-                  Вся информация <br />в одном месте
+                  Агрегированный <br />
+                  пул ликвидности
                 </h5>
               </div>
-              <Image className={styles.cardImage} src={Screener1} alt="" />
+              <Image className={styles.cardImage} src={Swap1} alt="" />
             </div>
           </Card>
         </Link>

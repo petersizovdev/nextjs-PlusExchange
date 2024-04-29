@@ -27,9 +27,12 @@
   align-items: center;
   padding: 2rem;
 }
+.leftCard h5 {
+  color: var(--white-glass);
+}
 
 .cardImage {
-  width: 8rem;
+  width: 15%;
   filter: invert(0.9);
   z-index: 9;
 }
@@ -51,9 +54,9 @@
   z-index: 99;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1042px) {
   .trends {
     flex-direction: column;
-    gap: 6rem;
+    gap: 2rem;
   }
 }

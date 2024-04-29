@@ -30,7 +30,11 @@ export default function Screener() {
       <div className={styles.market}>
         <div className={styles.leftPanel}>
           <CryptocurrencyMarket
-            widgetProps={{ theme: "dark", isTransparent: false }}
+            widgetProps={{
+              theme: "dark",
+              isTransparent: false,
+              width: "100%",
+            }}
           />
         </div>
         <div className={styles.rightPanel}>

@@ -15,6 +15,7 @@
   --backup-border: var(--backdrop);
   --size: 100;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -37,7 +38,6 @@ html {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  
 }
 
 *,
@@ -62,7 +62,10 @@ ul {
   color: var(--white);
   z-index: 0;
 }
-
+body {
+  position: relative;
+  overflow: hidden;
+}
 ol,
 ul {
   list-style: none;
@@ -144,28 +147,31 @@ body {
   width: 425px; /* As IE6 ignores !important it will set width as 1000px; */
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1024px) {
   html {
     font-size: 14px;
   }
 }
-@media (max-width: 1024px) {
-  html {
-    font-size: 12px;
+@media (max-width: 768px) {
+  h1 {
+    font-size: 6rem;
   }
-}
-@media (max-width: 860px) {
-  html {
-    font-size: 10px;
+  h2 {
+    font-size: 4rem;
   }
-}
-@media (max-width: 680px) {
-  html {
-    font-size: 8px;
+  h3 {
+    font-size: 2rem;
   }
-}
-@media (max-width: 520px) {
-  html {
-    font-size: 6px;
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.25rem;
   }
 }
