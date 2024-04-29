@@ -14,11 +14,17 @@ const Welcome = () => {
         <h1>Plus Exchange</h1>
         <div className={styles.goto}>
           <h3>
-            Ваш верный спутник в мире <br />
-            децентрализованных финансов{" "}
+            Ваш верный спутник в&nbsp;мире <br />
+            децентрализованных финансов
           </h3>
-          <Link style={{ textDecoration: "none",color:'inherit' }} href="/swap">
-            <Card className="cardButton">Перейти к обмену</Card>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            href="/swap"
+          >
+            <Card className="cardButton">
+              {" "}
+              <h4> Перейти к обмену</h4>{" "}
+            </Card>
           </Link>
         </div>
       </div>

@@ -142,9 +142,8 @@ body {
   box-sizing: border-box;
 }
 body {
-  min-width: 425px; /* Suppose you want minimum width of 1000px */
+  min-width: 375px;
   width: auto !important; /* Firefox will set width as auto */
-  width: 425px; /* As IE6 ignores !important it will set width as 1000px; */
 }
 
 @media (max-width: 1024px) {
@@ -173,5 +172,35 @@ body {
   }
   p {
     font-size: 1.25rem;
+  }
+  .container {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.9rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+  .container {
+    padding: 1rem 2rem;
   }
 }

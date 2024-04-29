@@ -1,6 +1,6 @@
 .slider {
   width: 100%;
-  max-height: 25vw;
+  max-height: 35vw;
   border-radius: 1rem;
   margin: 10rem auto;
   background-color: var(--black-glass);
@@ -8,4 +8,11 @@
 .slider img {
   width: 100%;
   opacity: 0;
+}
+@media (max-width: 1024px) {
+  .slider {
+    max-height: 40vw;
+
+    margin: 5rem auto;
+  }
 }

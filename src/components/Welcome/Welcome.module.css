@@ -45,3 +45,11 @@
   pointer-events: none;
   z-index: 0;
 }
+@media (max-width: 425px) {
+  .welcomeText h1 {
+    font-size: 4rem;
+  }
+  .goto h3 {
+    font-size: 1.25rem;
+  }
+}

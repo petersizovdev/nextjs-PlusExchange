@@ -9,15 +9,13 @@ function formatMarketcap(marketcap) {
 }
 
 function Coin({ name, image, symbol, price, volume, priceChange, marketcap }) {
-  const formattedPrice = price.toString().slice(0, 6); // Ограничить длину price до 5 символов
-
   return (
     <div className="coin-row">
       <div className="coin-section">
         <img src={image} alt="crypt" />
         <p className="coin-symbol">{symbol}</p>
       </div>
-      <p className="coin-price">${formattedPrice}</p>
+      <p className="coin-price">${price.toFixed(2)}</p>
 
       {priceChange < 0 ? (
         <p className="coin-percent red">{priceChange.toFixed(2)}%</p>

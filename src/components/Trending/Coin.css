@@ -4,6 +4,7 @@
   align-items: center;
   margin: 2rem;
   gap: 2rem;
+
 }
 .coin-section {
   display: flex;
@@ -32,4 +33,9 @@
 }
 .green {
   color: var(--green);
+}
+@media (max-width: 490px) {
+  .coin-vol {
+    display: none;
+  }
 }
