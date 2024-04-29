@@ -7,8 +7,6 @@ import { getNews } from "@/api/apiNews";
 const News = () => {
   const [news, setNews] = useState([]);
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 3;
 
@@ -17,7 +15,6 @@ const News = () => {
       const response = await getNews({
         page_number: currentPage,
         page_size: pageSize,
-        category: selectedCategory === "All" ? null : selectedCategory,
       });
       setNews(response.news);
     } catch (error) {
@@ -27,7 +24,7 @@ const News = () => {
 
   useEffect(() => {
     fetchNews(currentPage);
-  }, [currentPage, selectedCategory]);
+  }, [currentPage]);
 
   return (
     <main className={styles.main}>
@@ -43,7 +40,9 @@ const News = () => {
           </div>
 
           <div className={styles.info}>
-            <p className={styles.title}>{newsItem.title}</p>
+            <p className={styles.title}>
+              {newsItem.title.split(" ").slice(0, 10).join(" ")+(newsItem.title.split(" ").length > 10 ? "..." : "")}
+            </p>
             <p className={styles.description}>
               {newsItem.description.split(" ").slice(0, 18).join(" ") +
                 (newsItem.description.split(" ").length > 18 ? "..." : "")}
