@@ -1,16 +1,16 @@
-import Slider from "@/components/Slider/Slider";
+import Slider from "./components/Slider/Slider";
 import styles from "./page.module.css";
-import Card from "@/components/Card/Card";
-import Welcome from "@/components/Welcome/Welcome";
-import Accordion from "@/components/Accordion/Accordion";
-import Trending from "@/components/Trending/Trending";
+import Card from "./components/Card/Card";
+import Welcome from "./components/Welcome/Welcome";
+import Accordion from "./components/Accordion/Accordion";
+import Trending from "./components/Trending/Trending";
 import Image from "next/image";
 import Screener from "@/assetst/svg/screener.svg";
 import Swap from "@/assetst/svg/swap.svg";
 import Screener1 from "@/assetst/svg/screener1.svg";
 import Swap1 from "@/assetst/svg/swap1.svg";
 import Link from "next/link";
-import News from "@/components/News/News";
+import News from "./components/News/News";
 
 export default function Home() {
   return (

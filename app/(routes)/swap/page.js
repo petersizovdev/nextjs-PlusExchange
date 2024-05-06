@@ -1,14 +1,14 @@
 "use client";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import PriceView from "../../../components/price";
-import QuoteView from "../../../components/quote";
+import PriceView from "../../components/price";
+import QuoteView from "../../components/quote";
 import { useState } from "react";
 import { useAccount, useChainId } from "wagmi";
 
 
 
 
-import Button from "@/components/Button/Button";
+import Button from "../../components/Button/Button";
 import styles from "./page.module.css";
 
 export default function Swap() {

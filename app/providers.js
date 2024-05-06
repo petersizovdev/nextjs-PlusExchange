@@ -43,6 +43,9 @@ const queryClient = new QueryClient();
 export function Providers({ children }) {
   return (
     <div
+      style={{
+        padding: "20px",
+      }}
     >
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
