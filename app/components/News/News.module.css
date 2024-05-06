@@ -22,7 +22,7 @@
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
-  background-image: url("../../assetst/img/news.png");
+  background-image: url("../../../src/assetst/img/news.png");
   background-size: cover;
   border-radius: 6px;
 }

@@ -1,16 +1,16 @@
 "use client";
 
-import Chart from "@/components/Chart/Chart";
+import Chart from "../../components/Chart/Chart";
 import styles from "./page.module.css";
-import Screen from "@/components/Screener/Screener";
+import Screen from "../../components/Screener/Screener";
 import {
   AdvancedChart,
   CryptocurrencyMarket,
   Timeline,
 } from "react-tradingview-embed";
-import Card from "@/components/Card/Card";
-import Button from "@/components/Button/Button";
-import News from "@/components/News/News";
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
+import News from "../../components/News/News";
 
 export default function Screener() {
   return (

@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./News.module.css";
-import { getNews } from "@/api/apiNews";
+import { getNews } from "../../api/apiNews";
 
 const News = () => {
   const [news, setNews] = useState([]);
