@@ -22,7 +22,7 @@ import {
 
 import Image from "next/image";
 import qs from "qs";
-import Button from '../Button/Button';
+import Button from "../Button/Button";
 
 export const DEFAULT_BUY_TOKEN = (chainId) => {
   if (chainId === 137) {
@@ -141,17 +141,16 @@ export default function PriceView({
 
   return (
     <div className={styles.priceContainer}>
-
-
       <div className={styles.price}>
         <div className={styles.terminalRow}>
-          <Image
-            alt={sellToken}
-            src={POLYGON_TOKENS_BY_SYMBOL[sellToken].logoURI}
-            width={16}
-            height={16}
-          />
-
+          <div className={styles.coinIcon}>
+            <Image
+              alt={sellToken}
+              src={POLYGON_TOKENS_BY_SYMBOL[sellToken].logoURI}
+              width={128}
+              height={128}
+            />
+          </div>
           <select
             value={sellToken}
             name="sell-token-select"
@@ -166,7 +165,6 @@ export default function PriceView({
               );
             })}
           </select>
-
           <input
             className={styles.terminalInput}
             id="sell-amount"
@@ -184,12 +182,14 @@ export default function PriceView({
         </h4>
 
         <div className={styles.terminalRow}>
-          <Image
-            alt={buyToken}
-            src={POLYGON_TOKENS_BY_SYMBOL[buyToken].logoURI}
-            width={16}
-            height={16}
-          />
+          <div className={styles.coinIcon}>
+            <Image
+              alt={buyToken}
+              src={POLYGON_TOKENS_BY_SYMBOL[buyToken].logoURI}
+              width={128}
+              height={128}
+            />{" "}
+          </div>
           <select
             name="buy-token-select"
             id="buy-token-select"
@@ -204,7 +204,6 @@ export default function PriceView({
               );
             })}
           </select>
-
           <input
             className={styles.terminalInput}
             id="buy-amount"
@@ -290,11 +289,7 @@ export default function PriceView({
 
                   return (
                     <div style={{ display: "flex", gap: 12 }}>
-                      <button
-                        onClick={openChainModal}
-                  
-                        type="button"
-                      >
+                      <button onClick={openChainModal} type="button">
                         {chain.hasIcon && (
                           <div
                             style={{

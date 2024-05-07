@@ -46,6 +46,7 @@ export function Providers({ children }) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider
+          locale="ru-RU"
           theme={darkTheme({
             accentColor: "#55ba6f",
             accentColorForeground: "#0c0c0c",
