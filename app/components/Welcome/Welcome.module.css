@@ -10,7 +10,12 @@
   gap: 2rem;
   z-index: 1;
 }
-
+.cardButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2%;
+}
 .goto {
   display: flex;
   flex-direction: column;

@@ -22,8 +22,7 @@ const Welcome = () => {
             href="/swap"
           >
             <Card className="cardButton">
-              {" "}
-              <h4> Перейти к обмену</h4>{" "}
+              <h4 className={styles.cardButton}> Перейти к обмену</h4>
             </Card>
           </Link>
         </div>

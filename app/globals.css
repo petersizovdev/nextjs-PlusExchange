@@ -30,7 +30,7 @@ input::-webkit-inner-spin-button {
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 14px;
   background-color: var(--black-bg);
   font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
@@ -136,7 +136,6 @@ h6 {
 p {
   font-size: 1.25rem;
 }
-
 
 html,
 body {
