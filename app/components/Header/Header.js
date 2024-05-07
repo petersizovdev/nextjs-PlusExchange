@@ -1,6 +1,7 @@
 import styles from "./Header.module.css";
 import Button from "../Button/Button";
 import Link from "next/link";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const Header = () => {
   return (
@@ -26,17 +27,10 @@ const Header = () => {
         </div>
       </Link>
       <div className={styles.nav}>
-        <Link href="/swap">
-          <Button className="outlined">Обмен</Button>
-        </Link>
-        <Link href="/screener">
-          <Button className="outlined">Скринер</Button>
-        </Link>
-        <Link href="/">
-          <Button className="outlined">Аккаунт</Button>
-        </Link>
-        <Button className="outlined">EN</Button>
+
+        <ConnectButton/>
       </div>
+ 
     </div>
   );
 };

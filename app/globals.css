@@ -68,7 +68,12 @@ ol,
 ul {
   list-style: none;
 }
-
+input {
+  font-size: 1.5rem;
+}
+select {
+  font-size: 1.5rem;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -131,6 +136,7 @@ h6 {
 p {
   font-size: 1.25rem;
 }
+
 
 html,
 body {

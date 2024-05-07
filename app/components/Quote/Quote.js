@@ -1,16 +1,13 @@
 import { useEffect } from "react";
 import { formatUnits } from "ethers";
-import {
-  useSendTransaction,
-  useWaitForTransactionReceipt,
-} from "wagmi";
+import { useSendTransaction, useWaitForTransactionReceipt } from "wagmi";
 import { Address } from "viem";
 
 import {
   POLYGON_TOKENS_BY_ADDRESS,
   AFFILIATE_FEE,
   FEE_RECIPIENT,
-} from "../../src/constants";
+} from "../../../src/constants";
 import Image from "next/image";
 import qs from "qs";
 
@@ -179,9 +176,7 @@ export default function QuoteView({
           <a href={`https://polygonscan.com/tx/${hash}`}>Check Polygonscan</a>
         </div>
       )}
-      {error && (
-        <div>Error: {(error).shortMessage || error.message}</div>
-      )}
+      {error && <div>Error: {error.shortMessage || error.message}</div>}
     </div>
   );
 }

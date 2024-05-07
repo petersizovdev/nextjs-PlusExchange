@@ -1,3 +1,6 @@
+import styles from "./price.module.css";
+import cn from "classnames";
+import { IoArrowDownCircleOutline } from "react-icons/io5";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useEffect, useState, ChangeEvent } from "react";
 import { formatUnits, parseUnits } from "ethers";
@@ -16,10 +19,14 @@ import {
   MAX_ALLOWANCE,
   AFFILIATE_FEE,
   FEE_RECIPIENT,
-} from "../../src/constants";
+} from "../../../src/constants";
 
 import Image from "next/image";
 import qs from "qs";
+import Button from "../Button/Button";
+import Card from '../Card/Card';
+import Alert from '../Alert/AlertErr';
+
 
 export const DEFAULT_BUY_TOKEN = (chainId) => {
   if (chainId === 137) {
@@ -137,89 +144,25 @@ export default function PriceView({
       : true;
 
   return (
-    <div>
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <a href="https://0x.org/" target="_blank" rel="noopener noreferrer">
-   
-        </a>
-        <ConnectButton />
-      </header>
-
-      <div className="container">
-
-        <div >
-          <label htmlFor="sell" >
-            Sell
-          </label>
-          <section className="mt-4 flex items-start justify-center">
-            <label htmlFor="sell-select" className="sr-only"></label>
-            <Image
-              alt={sellToken}
-              className="h-9 w-9 mr-2 rounded-md"
-              src={POLYGON_TOKENS_BY_SYMBOL[sellToken].logoURI}
-              width={6}
-              height={6}
-            />
-
-            <div className="h-14 sm:w-full sm:mr-2">
-              <select
-                value={sellToken}
-                name="sell-token-select"
-                id="sell-token-select"
-    
-                onChange={handleSellTokenChange}
-              >
-                {/* <option value="">--Choose a token--</option> */}
-                {POLYGON_TOKENS.map((token) => {
-                  return (
-                    <option
-                      key={token.address}
-                      value={token.symbol.toLowerCase()}
-                    >
-                      {token.symbol}
-                    </option>
-                  );
-                })}
-              </select>
+    <div className={styles.priceContainer}>
+      <div className={styles.price}>
+        <div className={styles.terminalRow}>
+          {" "}
+          <div className={styles.coinSelect}>
+            <div className={styles.coinIcon}>
+              <Image
+                alt={sellToken}
+                src={POLYGON_TOKENS_BY_SYMBOL[sellToken].logoURI}
+                width={128}
+                height={128}
+              />
             </div>
-            <label htmlFor="sell-amount" ></label>
-            <input
-              id="sell-amount"
-              value={sellAmount}
-              className="h-9 rounded-md"
-
-              type="number"
-              onChange={(e) => {
-                setTradeDirection("sell");
-                setSellAmount(e.target.value);
-              }}
-            />
-          </section>
-          <label htmlFor="buy" >
-            Buy
-          </label>
-          <section >
-            <label htmlFor="buy-token" ></label>
-            <Image
-              alt={buyToken}
-            
-              src={POLYGON_TOKENS_BY_SYMBOL[buyToken].logoURI}
-              width={6}
-              height={6}
-            />
             <select
-              name="buy-token-select"
-              id="buy-token-select"
-              value={buyToken}
-             
-              onChange={(e) => handleBuyTokenChange(e)}
+              value={sellToken}
+              name="sell-token-select"
+              id="sell-token-select"
+              onChange={handleSellTokenChange}
             >
-              {/* <option value="">--Choose a token--</option> */}
               {POLYGON_TOKENS.map((token) => {
                 return (
                   <option
@@ -231,36 +174,79 @@ export default function PriceView({
                 );
               })}
             </select>
-            <label htmlFor="buy-amount"></label>
-            <input
-              id="buy-amount"
-              value={buyAmount}
-             
-              type="number"
-              style={{ border: "1px solid black" }}
-              disabled
-              onChange={(e) => {
-                setTradeDirection("buy");
-                setBuyAmount(e.target.value);
-              }}
-            />
-          </section>
-
-          <div>
-            {price && price.grossBuyAmount
-              ? "Affiliate Fee: " +
-                Number(
-                  formatUnits(
-                    BigInt(price.grossBuyAmount),
-                    POLYGON_TOKENS_BY_SYMBOL[buyToken].decimals
-                  )
-                ) *
-                  AFFILIATE_FEE +
-                " " +
-                POLYGON_TOKENS_BY_SYMBOL[buyToken].symbol
-              : null}
           </div>
+          <input
+            className={styles.terminalInput}
+            id="sell-amount"
+            value={sellAmount}
+            type="number"
+            onChange={(e) => {
+              setTradeDirection("sell");
+              setSellAmount(e.target.value);
+            }}
+          />
         </div>
+
+        <h4>
+          <IoArrowDownCircleOutline />
+        </h4>
+
+        <div className={styles.terminalRow}>
+          <div className={styles.coinSelect}>
+            <div className={styles.coinIcon}>
+              <Image
+                alt={buyToken}
+                src={POLYGON_TOKENS_BY_SYMBOL[buyToken].logoURI}
+                width={128}
+                height={128}
+              />
+            </div>
+            <select
+              name="buy-token-select"
+              id="buy-token-select"
+              value={buyToken}
+              onChange={(e) => handleBuyTokenChange(e)}
+            >
+              {POLYGON_TOKENS.map((token) => {
+                return (
+                  <option
+                    key={token.address}
+                    value={token.symbol.toLowerCase()}
+                  >
+                    {token.symbol}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+
+          <input
+            className={styles.terminalInput}
+            id="buy-amount"
+            value={buyAmount}
+            type="number"
+            disabled
+            onChange={(e) => {
+              setTradeDirection("buy");
+              setBuyAmount(e.target.value);
+            }}
+          />
+        </div>
+
+        <h6 className={styles.affiliate}>
+          {price && price.grossBuyAmount
+            ? "Комиссия сервиса: " +
+              Number(
+                formatUnits(
+                  BigInt(price.grossBuyAmount),
+                  POLYGON_TOKENS_BY_SYMBOL[buyToken].decimals
+                )
+              ) *
+                AFFILIATE_FEE +
+              " " +
+              POLYGON_TOKENS_BY_SYMBOL[buyToken].symbol
+            : null}
+        </h6>
 
         {takerAddress ? (
           <ApproveOrReviewButton
@@ -298,31 +284,27 @@ export default function PriceView({
                   {(() => {
                     if (!connected) {
                       return (
-                        <button
-                          className="w-full bg-blue-600 text-white font-semibold p-2 rounded hover:bg-blue-700"
+                        <Button
+                          className={styles.connectButton}
                           onClick={openConnectModal}
                           type="button"
                         >
-                          Connect Wallet
-                        </button>
+                          Подключить кошелек
+                        </Button>
                       );
                     }
 
                     if (chain.unsupported) {
                       return (
                         <button onClick={openChainModal} type="button">
-                          Wrong network
+                          Неподходящая сеть!
                         </button>
                       );
                     }
 
                     return (
                       <div style={{ display: "flex", gap: 12 }}>
-                        <button
-                          onClick={openChainModal}
-                          style={{ display: "flex", alignItems: "center" }}
-                          type="button"
-                        >
+                        <button onClick={openChainModal} type="button">
                           {chain.hasIcon && (
                             <div
                               style={{
@@ -409,16 +391,15 @@ export default function PriceView({
     }, [data, refetch]);
 
     if (error) {
-      return <div>Something went wrong: {error.message}</div>;
+      return <Alert>Something went wrong: {error.message}</Alert>;
     }
 
     // Need to figure out approval button
     if (allowance === 0n) {
       return (
         <>
-          <button
+          <Button
             type="button"
-            
             onClick={async () => {
               await writeContract({
                 abi: erc20Abi,
@@ -429,24 +410,23 @@ export default function PriceView({
               refetch();
             }}
           >
-            {isApproving ? "Approving…" : "Approve"}
-          </button>
+            {isApproving ? "Подтверждение…" : "Подтвердить"}
+          </Button>
         </>
       );
     }
 
     return (
-      <button
+      <Button
         type="button"
         disabled={disabled}
         onClick={() => {
           // fetch data, when finished, show quote view
           setFinalize(true);
         }}
-
       >
-        {disabled ? "Insufficient Balance" : "Review Trade"}
-      </button>
+        {disabled ? "Недостаточный баланс" : "Посмотреть информацию"}
+      </Button>
     );
   }
 }

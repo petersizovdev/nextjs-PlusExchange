@@ -1,18 +1,14 @@
 "use client";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
-import PriceView from "../../components/price";
-import QuoteView from "../../components/quote";
+
+import PriceView from "../../components/Price/Price";
+import QuoteView from "../../components/Quote/Quote";
 import { useState } from "react";
 import { useAccount, useChainId } from "wagmi";
-
-
-
 
 import Button from "../../components/Button/Button";
 import styles from "./page.module.css";
 
 export default function Swap() {
-
   const { address } = useAccount();
 
   const chainId = useChainId() || 137;
@@ -23,10 +19,6 @@ export default function Swap() {
   const [quote, setQuote] = useState();
   return (
     <div className={styles.terminal}>
-   
-
-   <div
-    >
       {finalize && price ? (
         <QuoteView
           takerAddress={address}
@@ -44,21 +36,6 @@ export default function Swap() {
           chainId={chainId}
         />
       )}
-    </div>
-
-
-
-
-
-
-      <input placeholder="0.0" type="number" inputMode="numeric"></input>
-      <div className={styles.terminalSwap}>
-        <Button className="stock">⇅</Button>
-      </div>
-
-      <input placeholder="0.0" type="number" inputMode="numeric"></input>
-
-      <Button className="accent">Обменять</Button>
     </div>
   );
 }
