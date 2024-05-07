@@ -1,4 +1,5 @@
 import styles from "./price.module.css";
+import cn from "classnames";
 import { IoArrowDownCircleOutline } from "react-icons/io5";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useEffect, useState, ChangeEvent } from "react";
@@ -23,6 +24,9 @@ import {
 import Image from "next/image";
 import qs from "qs";
 import Button from "../Button/Button";
+import Card from '../Card/Card';
+import Alert from '../Alert/AlertErr';
+
 
 export const DEFAULT_BUY_TOKEN = (chainId) => {
   if (chainId === 137) {
@@ -143,28 +147,34 @@ export default function PriceView({
     <div className={styles.priceContainer}>
       <div className={styles.price}>
         <div className={styles.terminalRow}>
-          <div className={styles.coinIcon}>
-            <Image
-              alt={sellToken}
-              src={POLYGON_TOKENS_BY_SYMBOL[sellToken].logoURI}
-              width={128}
-              height={128}
-            />
+          {" "}
+          <div className={styles.coinSelect}>
+            <div className={styles.coinIcon}>
+              <Image
+                alt={sellToken}
+                src={POLYGON_TOKENS_BY_SYMBOL[sellToken].logoURI}
+                width={128}
+                height={128}
+              />
+            </div>
+            <select
+              value={sellToken}
+              name="sell-token-select"
+              id="sell-token-select"
+              onChange={handleSellTokenChange}
+            >
+              {POLYGON_TOKENS.map((token) => {
+                return (
+                  <option
+                    key={token.address}
+                    value={token.symbol.toLowerCase()}
+                  >
+                    {token.symbol}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-          <select
-            value={sellToken}
-            name="sell-token-select"
-            id="sell-token-select"
-            onChange={handleSellTokenChange}
-          >
-            {POLYGON_TOKENS.map((token) => {
-              return (
-                <option key={token.address} value={token.symbol.toLowerCase()}>
-                  {token.symbol}
-                </option>
-              );
-            })}
-          </select>
           <input
             className={styles.terminalInput}
             id="sell-amount"
@@ -182,28 +192,34 @@ export default function PriceView({
         </h4>
 
         <div className={styles.terminalRow}>
-          <div className={styles.coinIcon}>
-            <Image
-              alt={buyToken}
-              src={POLYGON_TOKENS_BY_SYMBOL[buyToken].logoURI}
-              width={128}
-              height={128}
-            />{" "}
+          <div className={styles.coinSelect}>
+            <div className={styles.coinIcon}>
+              <Image
+                alt={buyToken}
+                src={POLYGON_TOKENS_BY_SYMBOL[buyToken].logoURI}
+                width={128}
+                height={128}
+              />
+            </div>
+            <select
+              name="buy-token-select"
+              id="buy-token-select"
+              value={buyToken}
+              onChange={(e) => handleBuyTokenChange(e)}
+            >
+              {POLYGON_TOKENS.map((token) => {
+                return (
+                  <option
+                    key={token.address}
+                    value={token.symbol.toLowerCase()}
+                  >
+                    {token.symbol}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-          <select
-            name="buy-token-select"
-            id="buy-token-select"
-            value={buyToken}
-            onChange={(e) => handleBuyTokenChange(e)}
-          >
-            {POLYGON_TOKENS.map((token) => {
-              return (
-                <option key={token.address} value={token.symbol.toLowerCase()}>
-                  {token.symbol}
-                </option>
-              );
-            })}
-          </select>
+
           <input
             className={styles.terminalInput}
             id="buy-amount"
@@ -216,119 +232,119 @@ export default function PriceView({
             }}
           />
         </div>
+
+        <h6 className={styles.affiliate}>
+          {price && price.grossBuyAmount
+            ? "Комиссия сервиса: " +
+              Number(
+                formatUnits(
+                  BigInt(price.grossBuyAmount),
+                  POLYGON_TOKENS_BY_SYMBOL[buyToken].decimals
+                )
+              ) *
+                AFFILIATE_FEE +
+              " " +
+              POLYGON_TOKENS_BY_SYMBOL[buyToken].symbol
+            : null}
+        </h6>
+
+        {takerAddress ? (
+          <ApproveOrReviewButton
+            sellTokenAddress={POLYGON_TOKENS_BY_SYMBOL[sellToken].address}
+            takerAddress={takerAddress}
+            onClick={() => {
+              setFinalize(true);
+            }}
+            disabled={inSufficientBalance}
+          />
+        ) : (
+          <ConnectButton.Custom>
+            {({
+              account,
+              chain,
+              openAccountModal,
+              openChainModal,
+              openConnectModal,
+              mounted,
+            }) => {
+              const ready = mounted;
+              const connected = ready && account && chain;
+
+              return (
+                <div
+                  {...(!ready && {
+                    "aria-hidden": true,
+                    style: {
+                      opacity: 0,
+                      pointerEvents: "none",
+                      userSelect: "none",
+                    },
+                  })}
+                >
+                  {(() => {
+                    if (!connected) {
+                      return (
+                        <Button
+                          className={styles.connectButton}
+                          onClick={openConnectModal}
+                          type="button"
+                        >
+                          Подключить кошелек
+                        </Button>
+                      );
+                    }
+
+                    if (chain.unsupported) {
+                      return (
+                        <button onClick={openChainModal} type="button">
+                          Неподходящая сеть!
+                        </button>
+                      );
+                    }
+
+                    return (
+                      <div style={{ display: "flex", gap: 12 }}>
+                        <button onClick={openChainModal} type="button">
+                          {chain.hasIcon && (
+                            <div
+                              style={{
+                                background: chain.iconBackground,
+                                width: 12,
+                                height: 12,
+                                borderRadius: 999,
+                                overflow: "hidden",
+                                marginRight: 4,
+                              }}
+                            >
+                              {chain.iconUrl && (
+                                <Image
+                                  src={chain.iconUrl}
+                                  alt={chain.name ?? "Chain icon"}
+                                  width={12}
+                                  height={12}
+                                  layout="fixed"
+                                />
+                              )}
+                            </div>
+                          )}
+                          {chain.name}
+                        </button>
+
+                        <button onClick={openAccountModal} type="button">
+                          {account.displayName}
+                          {account.displayBalance
+                            ? ` (${account.displayBalance})`
+                            : ""}
+                        </button>
+                      </div>
+                    );
+                  })()}
+                </div>
+              );
+            }}
+          </ConnectButton.Custom>
+        )}
       </div>
-
-      <h6 className={styles.affiliate}>
-        {price && price.grossBuyAmount
-          ? "Комиссия сервиса: " +
-            Number(
-              formatUnits(
-                BigInt(price.grossBuyAmount),
-                POLYGON_TOKENS_BY_SYMBOL[buyToken].decimals
-              )
-            ) *
-              AFFILIATE_FEE +
-            " " +
-            POLYGON_TOKENS_BY_SYMBOL[buyToken].symbol
-          : null}
-      </h6>
-
-      {takerAddress ? (
-        <ApproveOrReviewButton
-          sellTokenAddress={POLYGON_TOKENS_BY_SYMBOL[sellToken].address}
-          takerAddress={takerAddress}
-          onClick={() => {
-            setFinalize(true);
-          }}
-          disabled={inSufficientBalance}
-        />
-      ) : (
-        <ConnectButton.Custom>
-          {({
-            account,
-            chain,
-            openAccountModal,
-            openChainModal,
-            openConnectModal,
-            mounted,
-          }) => {
-            const ready = mounted;
-            const connected = ready && account && chain;
-
-            return (
-              <div
-                {...(!ready && {
-                  "aria-hidden": true,
-                  style: {
-                    opacity: 0,
-                    pointerEvents: "none",
-                    userSelect: "none",
-                  },
-                })}
-              >
-                {(() => {
-                  if (!connected) {
-                    return (
-                      <Button
-                        className={styles.connectButton}
-                        onClick={openConnectModal}
-                        type="button"
-                      >
-                        Подключить кошелек
-                      </Button>
-                    );
-                  }
-
-                  if (chain.unsupported) {
-                    return (
-                      <button onClick={openChainModal} type="button">
-                        Неподходящая сеть!
-                      </button>
-                    );
-                  }
-
-                  return (
-                    <div style={{ display: "flex", gap: 12 }}>
-                      <button onClick={openChainModal} type="button">
-                        {chain.hasIcon && (
-                          <div
-                            style={{
-                              background: chain.iconBackground,
-                              width: 12,
-                              height: 12,
-                              borderRadius: 999,
-                              overflow: "hidden",
-                              marginRight: 4,
-                            }}
-                          >
-                            {chain.iconUrl && (
-                              <Image
-                                src={chain.iconUrl}
-                                alt={chain.name ?? "Chain icon"}
-                                width={12}
-                                height={12}
-                                layout="fixed"
-                              />
-                            )}
-                          </div>
-                        )}
-                        {chain.name}
-                      </button>
-
-                      <button onClick={openAccountModal} type="button">
-                        {account.displayName}
-                        {account.displayBalance
-                          ? ` (${account.displayBalance})`
-                          : ""}
-                      </button>
-                    </div>
-                  );
-                })()}
-              </div>
-            );
-          }}
-        </ConnectButton.Custom>
-      )}
     </div>
   );
 
@@ -375,7 +391,7 @@ export default function PriceView({
     }, [data, refetch]);
 
     if (error) {
-      return <div>Something went wrong: {error.message}</div>;
+      return <Alert>Something went wrong: {error.message}</Alert>;
     }
 
     // Need to figure out approval button

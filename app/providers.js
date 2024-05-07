@@ -26,8 +26,8 @@ import { WagmiProvider } from "wagmi";
 const { wallets } = getDefaultWallets();
 
 const config = getDefaultConfig({
-  appName: "0x Token Swap dApp",
-  projectId: "a8024e8262cb4e7102941a3577b5a5c0",
+  appName: "plusExchange",
+  projectId: "74b3a037a6d0d991d277f475f8e804de",
   wallets: [
     ...wallets,
     {
