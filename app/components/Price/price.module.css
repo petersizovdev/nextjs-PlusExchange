@@ -1,0 +1,24 @@
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+.terminalRow {
+  display: flex;
+}
+.terminalInput {
+  margin-left: 2rem;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.affiliate {
+  color: var(--white-glass);
+  margin-top: 2rem;
+}
+.connectButton{
+    
+}

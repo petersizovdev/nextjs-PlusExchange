@@ -1,10 +1,11 @@
 "use client";
-
+import "@rainbow-me/rainbowkit/styles.css";
 import * as React from "react";
 import {
   RainbowKitProvider,
   getDefaultWallets,
   getDefaultConfig,
+  darkTheme,
 } from "@rainbow-me/rainbowkit";
 import {
   argentWallet,
@@ -42,16 +43,20 @@ const queryClient = new QueryClient();
 
 export function Providers({ children }) {
   return (
-    <div
-      style={{
-        padding: "20px",
-      }}
-    >
-      <WagmiProvider config={config}>
-        <QueryClientProvider client={queryClient}>
-          <RainbowKitProvider>{children}</RainbowKitProvider>{" "}
-        </QueryClientProvider>
-      </WagmiProvider>
-    </div>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider
+          theme={darkTheme({
+            accentColor: "#55ba6f",
+            accentColorForeground: "#0c0c0c",
+            borderRadius: "medium",
+            fontStack: "system",
+            overlayBlur: "small",
+          })}
+        >
+          {children}
+        </RainbowKitProvider>{" "}
+      </QueryClientProvider>
+    </WagmiProvider>
   );
 }

@@ -18,6 +18,16 @@
   font-size: 2rem;
   color: var(--white);
 }
+.terminal select {
+  background-color: var(--black-glass);
+  backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: 0;
+  font-size: 2rem;
+  color: var(--white);
+}
+
 .terminalSettings {
   display: flex;
   justify-content: space-between;
