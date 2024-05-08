@@ -5,7 +5,7 @@ import QuoteView from "../../components/Quote/Quote";
 import { useState } from "react";
 import { useAccount, useChainId } from "wagmi";
 
-import Button from "../../components/Button/Button";
+
 import styles from "./page.module.css";
 
 export default function Swap() {

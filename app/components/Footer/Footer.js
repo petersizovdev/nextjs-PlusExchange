@@ -1,12 +1,12 @@
+import Image from "next/image";
 import styles from "./Footer.module.css";
 import cn from "classnames";
+import Zx from "@/assetst/svg/pby0x.svg";
 const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={cn([styles.footerBlock], [styles.left])}>
-        <span>Контакты</span>
-        <span>Поддержка</span>
-        <span>Для бизнеса</span>
+        <Image src={Zx} alt="poweredBy0X"></Image>
       </div>
       <div className={cn([styles.footerBlock], [styles.middle])}>
         <svg

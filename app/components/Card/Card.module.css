@@ -5,7 +5,6 @@
 
 .cardItems {
   width: 100%;
-
   --card-border: 1rem;
   border-radius: var(--card-border);
 }
@@ -79,6 +78,6 @@
 
 @media (max-width: 768px) {
   .glow {
-    --spotlight-size: 200px;
+    --spotlight-size: 0%;
   }
 }

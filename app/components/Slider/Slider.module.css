@@ -1,4 +1,9 @@
 .slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  filter: grayscale(40%);
   width: 100%;
   max-height: 35vw;
   border-radius: 1rem;
@@ -7,7 +12,8 @@
 }
 .slider img {
   width: 100%;
-  opacity: 0;
+
+  filter: contrast(110%);
 }
 @media (max-width: 1024px) {
   .slider {
