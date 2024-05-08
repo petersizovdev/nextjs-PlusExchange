@@ -1,0 +1,39 @@
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.terminalRow {
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  gap: 1rem;
+}
+.coinSelect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.coinIcon {
+  max-width: 32px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.affiliate {
+  color: var(--white-glass);
+  margin-top: 1rem;
+  margin-right: auto;
+}
+
+@media (max-width: 760px) {
+  .terminalRow {
+    flex-direction: column;
+  }
+}

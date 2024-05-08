@@ -18,6 +18,7 @@ const News = () => {
         page_size: pageSize,
       });
       setNews(response.news);
+      console.log(response.news)
     } catch (error) {
       console.log(error);
     }

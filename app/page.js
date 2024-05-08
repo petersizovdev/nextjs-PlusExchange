@@ -16,9 +16,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Welcome />
-
       <Slider />
-
       <div className={styles.trends}>
         <div className={styles.column}>
           <h4>Топ крипто</h4>
