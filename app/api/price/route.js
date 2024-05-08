@@ -1,5 +1,3 @@
-
-
 export async function GET(request) {
   const searchParams = request.nextUrl.searchParams;
 

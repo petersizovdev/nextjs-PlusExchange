@@ -24,9 +24,8 @@ import {
 import Image from "next/image";
 import qs from "qs";
 import Button from "../Button/Button";
-import Card from '../Card/Card';
-import Alert from '../Alert/AlertErr';
-
+import Card from "../Card/Card";
+import Alert from "../Alert/AlertErr";
 
 export const DEFAULT_BUY_TOKEN = (chainId) => {
   if (chainId === 137) {
@@ -147,7 +146,7 @@ export default function PriceView({
     <div className={styles.priceContainer}>
       <div className={styles.price}>
         <div className={styles.terminalRow}>
-          {" "}
+        
           <div className={styles.coinSelect}>
             <div className={styles.coinIcon}>
               <Image
@@ -391,7 +390,7 @@ export default function PriceView({
     }, [data, refetch]);
 
     if (error) {
-      return <Alert>Something went wrong: {error.message}</Alert>;
+      return <Alert>Что-то пошло не так: {error.message}</Alert>;
     }
 
     // Need to figure out approval button
@@ -425,7 +424,7 @@ export default function PriceView({
           setFinalize(true);
         }}
       >
-        {disabled ? "Недостаточный баланс" : "Посмотреть информацию"}
+        {disabled ? "Обменять" : "Обменять"}
       </Button>
     );
   }

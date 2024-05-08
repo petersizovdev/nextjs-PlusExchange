@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { formatUnits } from "ethers";
 import { useSendTransaction, useWaitForTransactionReceipt } from "wagmi";
 import { Address } from "viem";
+import styles from "./quote.module.css";
 
 import {
   POLYGON_TOKENS_BY_ADDRESS,
@@ -10,6 +11,8 @@ import {
 } from "../../../src/constants";
 import Image from "next/image";
 import qs from "qs";
+import Button from "../Button/Button";
+import Alert from "../Alert/AlertErr";
 
 export default function QuoteView({
   takerAddress,
@@ -80,72 +83,87 @@ export default function QuoteView({
   console.log("decimals:", sellTokenInfo(chainId).decimals);
 
   if (!quote) {
-    return <div>Getting best quote...</div>;
+    return <h4>Поиск лучшего предложения...</h4>;
   }
 
   console.log("quote", quote);
 
   return (
-    <div className="p-3 mx-auto max-w-screen-sm ">
-      <form>
-        <div className="bg-slate-200 dark:bg-slate-800 p-4 rounded-sm mb-3">
-          <div className="text-xl mb-2 text-white">You pay</div>
-          <div className="flex items-center text-lg sm:text-3xl text-white">
-            <Image
-              alt={sellTokenInfo(chainId).symbol}
-              className="h-9 w-9 mr-2 rounded-md"
-              src={sellTokenInfo(chainId || 137)?.logoURI}
-              width={9}
-              height={9}
-            />
-            <span>
-              {formatUnits(quote.sellAmount, sellTokenInfo(chainId).decimals)}
-            </span>
-            <div className="ml-2">{sellTokenInfo(chainId).symbol}</div>
+    <div className={styles.priceContainer}>
+      <div className={styles.price}>
+        <h6>Вы отдаете</h6>
+        <div className={styles.terminalRow}>
+          <div className={styles.coinSelect}>
+            {quote.sellAmount ? (
+              <span>
+                {formatUnits(quote.sellAmount, sellTokenInfo(chainId).decimals)}
+              </span>
+            ) : (
+              <span>0</span>
+            )}
+            <div className={styles.coinSelect}>
+              {sellTokenInfo(chainId).symbol}
+            </div>
+            <div className={styles.coinIcon}>
+              <Image
+                alt={sellTokenInfo(chainId).symbol}
+                src={sellTokenInfo(chainId || 137)?.logoURI}
+                width={128}
+                height={128}
+              />
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="bg-slate-200 dark:bg-slate-800 p-4 rounded-sm mb-3">
-          <div className="text-xl mb-2 text-white">You receive</div>
-          <div className="flex items-center text-lg sm:text-3xl text-white">
-            <img
-              alt={
-                POLYGON_TOKENS_BY_ADDRESS[price.buyTokenAddress.toLowerCase()]
-                  .symbol
-              }
-              className="h-9 w-9 mr-2 rounded-md"
-              src={
-                POLYGON_TOKENS_BY_ADDRESS[price.buyTokenAddress.toLowerCase()]
-                  .logoURI
-              }
-            />
-            <span>
-              {formatUnits(quote.buyAmount, buyTokenInfo(chainId).decimals)}
-            </span>
-            <div className="ml-2">{buyTokenInfo(chainId).symbol}</div>
+      <div className={styles.price}>
+        <h6>Вы получите</h6>
+        <div className={styles.terminalRow}>
+          <div className={styles.coinSelect}>
+            {quote.sellAmount ? (
+              <span>
+                {formatUnits(quote.buyAmount, buyTokenInfo(chainId).decimals)}
+              </span>
+            ) : (
+              <span>0</span>
+            )}
+
+            <div  className={styles.coinSelect}>{buyTokenInfo(chainId).symbol}</div>
+
+            <div className={styles.coinIcon}>
+              <Image
+                alt={
+                  POLYGON_TOKENS_BY_ADDRESS[price.buyTokenAddress.toLowerCase()]
+                    .symbol
+                }
+                src={
+                  POLYGON_TOKENS_BY_ADDRESS[price.buyTokenAddress.toLowerCase()]
+                    .logoURI
+                }
+                width={128}
+                height={128}
+              />
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="bg-slate-200 dark:bg-slate-800 p-4 rounded-sm mb-3">
-          <div className="text-slate-400">
-            {quote && quote.grossBuyAmount
-              ? "Affiliate Fee: " +
-                Number(
-                  formatUnits(
-                    BigInt(quote.grossBuyAmount),
-                    buyTokenInfo(chainId).decimals
-                  )
-                ) *
-                  AFFILIATE_FEE +
-                " " +
-                buyTokenInfo(chainId).symbol
-              : null}
-          </div>
-        </div>
-      </form>
+      <h6 className={styles.affiliate}>
+        {quote && quote.grossBuyAmount
+          ? "Комиссия сервиса: " +
+            Number(
+              formatUnits(
+                BigInt(quote.grossBuyAmount),
+                buyTokenInfo(chainId).decimals
+              )
+            ) *
+              AFFILIATE_FEE +
+            " " +
+            buyTokenInfo(chainId).symbol
+          : null}
+      </h6>
 
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+      <Button
         disabled={isPending}
         onClick={() => {
           console.log("submitting quote to blockchain");
@@ -162,21 +180,23 @@ export default function QuoteView({
             });
         }}
       >
-        {isPending ? "Confirming..." : "Place Order"}
-      </button>
-      <br></br>
-      <br></br>
-      <br></br>
-      {isConfirming && (
-        <div className="text-center">Waiting for confirmation ⏳ ...</div>
-      )}
+        {isPending ? "Подтверждение..." : "Подтвердить обмен"}
+      </Button>
+
+      {isConfirming && <div className="text-center">Подтверждение ⏳ ...</div>}
       {isConfirmed && (
         <div className="text-center">
-          Transaction Confirmed! 🎉{" "}
-          <a href={`https://polygonscan.com/tx/${hash}`}>Check Polygonscan</a>
+          Транзакция прошла успешно! 🎉
+          <a href={`https://polygonscan.com/tx/${hash}`}>
+            Посмотреть на Polygonscan
+          </a>
         </div>
       )}
-      {error && <div>Error: {error.shortMessage || error.message}</div>}
+      {error && (
+        <Alert>
+          Что-то пошло не так: {error.shortMessage || error.message}
+        </Alert>
+      )}
     </div>
   );
 }
