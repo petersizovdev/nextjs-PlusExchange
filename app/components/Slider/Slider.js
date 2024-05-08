@@ -6,6 +6,10 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import styles from "./Slider.module.css";
+import Promo1 from "../../../src/assetst/img/promo1.png";
+import Promo2 from "../../../src/assetst/img/promo2.png";
+import Promo3 from "../../../src/assetst/img/promo3.png";
+import Image from "next/image";
 
 export default function App() {
   return (
@@ -22,15 +26,14 @@ export default function App() {
         modules={[EffectFade, Autoplay, Pagination]}
         className={styles.slider}
       >
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
         <SwiperSlide>
-
-          <img
-            src="https://swiperjs.com/demos/images/nature-4.jpg"
-            alt="slide"
-          />
+          <Image src={Promo1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={Promo2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image src={Promo3} alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

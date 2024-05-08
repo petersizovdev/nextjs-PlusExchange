@@ -8,16 +8,41 @@
   user-select: none;
   pointer-events: none;
 }
+.logomobile {
+  width: 70%;
+  user-select: none;
+  pointer-events: none;
+  display: none;
+}
 .nav {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.5rem;
 }
-
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
 .path {
   fill: var(--white);
 }
+.menu {
+  display: none;
+}
+
 @media (max-width: 1024px) {
-  .nav {
+  .nav ul {
     display: none;
+  }
+  .logo {
+    display: none;
+  }
+  .logomobile {
+    display: block;
+  }
+  .menu {
+    display: block;
+
   }
 }

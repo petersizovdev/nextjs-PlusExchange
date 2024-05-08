@@ -5,15 +5,14 @@
 
 .cardItems {
   width: 100%;
- 
   --card-border: 1rem;
   border-radius: var(--card-border);
 }
 
 .cardButton {
-  --card-border: 0.5rem;
+  --card-border: 0.8rem;
   border-radius: var(--card-border);
-  padding: 1rem;
+  padding: 1rem 2rem;
   font-size: 2rem;
 }
 .cardAddButton {
@@ -77,9 +76,8 @@
   border-width: 5px;
 }
 
-
 @media (max-width: 768px) {
   .glow {
-    --spotlight-size: 200px;
+    --spotlight-size: 0%;
   }
 }

@@ -19,7 +19,13 @@
 }
 .stock {
   background-color: var(--black-glass);
-  color: var(--white);
+  color: #fff;
+  transform: scale(1.05);
+  transition: all 0.1s;
+  
+}
+.stock:hover {
+  scale: 105%;
 }
 
 .outlined:hover {
