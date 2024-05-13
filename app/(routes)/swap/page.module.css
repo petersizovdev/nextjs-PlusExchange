@@ -1,10 +1,10 @@
 .terminal {
   display: flex;
   flex-direction: column;
-  margin: 5rem auto 15rem auto;
-  border: 1px solid red;
+  margin: 1.5rem auto 10rem auto;
+
   background-color: var(--black-glass);
-  max-width: 80%;
+  max-width: 100%;
 
   border-radius: 1rem;
   gap: 1rem;
