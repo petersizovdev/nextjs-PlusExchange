@@ -1,12 +1,9 @@
 import Header from "./components/Header/Header";
 import "./globals.css";
 import Footer from "./components/Footer/Footer";
-
 import Head from "next/head";
 import { Providers } from "./providers";
-export const metadata = {
-  title: "Plus Exchange",
-};
+export const metadata = {title: "Plus Exchange",};
 
 export default function RootLayout({ children }) {
   return (

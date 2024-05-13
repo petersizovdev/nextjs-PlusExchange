@@ -50,7 +50,9 @@ const Header = () => {
             <Button className={"stock"}>Скринер</Button>
           </Link>
         </ul>
+
         <ConnectButton />
+
         <div className={styles.menu}>
           <Menu />
         </div>

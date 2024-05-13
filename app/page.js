@@ -31,13 +31,11 @@ export default function Home() {
           </Card>
         </div>
       </div>
-
       <div className={styles.trends}>
         <Link
           className={styles.cardLink}
           style={{ textDecoration: "none", color: "inherit" }}
-          href="/screener"
-        >
+          href="/screener">
           <Card className="cardItems">
             <div className={styles.leftCard}>
               <Image className={styles.cardImage} src={Screener1} alt="" />
@@ -50,12 +48,10 @@ export default function Home() {
             </div>
           </Card>
         </Link>
-
         <Link
           className={styles.cardLink}
           style={{ textDecoration: "none", color: "inherit" }}
-          href="/swap"
-        >
+          href="/swap">
           <Card className="cardItems">
             <div className={styles.leftCard}>
               <div className={styles.rigntCardText}>

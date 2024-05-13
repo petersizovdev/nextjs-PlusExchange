@@ -1,8 +1,10 @@
 .terminal {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 5rem auto 15rem auto;
+  border: 1px solid red;
   background-color: var(--black-glass);
+  max-width: 80%;
 
   border-radius: 1rem;
   gap: 1rem;
@@ -11,11 +13,10 @@
 
 .terminal input {
   background-color: var(--black-glass);
-
+  max-width: 80%;
   border-radius: 1rem;
   padding: 1rem;
   border: 0;
- 
   color: var(--white);
 }
 .terminal select {
@@ -38,4 +39,19 @@
   display: flex;
   justify-content: center;
   cursor: pointer;
+}
+@media (max-width: 760px) {
+  .terminal input {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .terminal select {
+    font-size: 16px;
+  }
+  .terminal button {
+    font-size: 16px;
+  }
 }
