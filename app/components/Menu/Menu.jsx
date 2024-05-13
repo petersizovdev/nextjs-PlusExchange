@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { IoMenuOutline } from "react-icons/io5";
-import styles from "./menu.module.css";
-import Link from "next/link";
-import Button from "../Button/Button";
+import React, { useState, useEffect, useRef } from 'react';
+import { IoMenuOutline } from 'react-icons/io5';
+import styles from './menu.module.css';
+import Link from 'next/link';
+import Button from '../Button/Button';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,11 +19,15 @@ const Menu = () => {
     }
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   useEffect(() => {
-    document.addEventListener("click", closeMenu);
+    document.addEventListener('click', closeMenu);
 
     return () => {
-      document.removeEventListener("click", closeMenu);
+      document.removeEventListener('click', closeMenu);
     };
   }, []);
 
@@ -35,10 +39,14 @@ const Menu = () => {
       {isMenuOpen && (
         <div className={styles.nav}>
           <Link href="/swap">
-            <Button className={"stock"}>Обмен</Button>
+            <Button className={'stock'} onClick={handleLinkClick}>
+              Обмен
+            </Button>
           </Link>
           <Link href="/screener">
-            <Button className={"stock"}>Скринер</Button>
+            <Button className={'stock'} onClick={handleLinkClick}>
+              Скринер
+            </Button>
           </Link>
         </div>
       )}
