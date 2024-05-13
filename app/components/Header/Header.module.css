@@ -9,7 +9,7 @@
   pointer-events: none;
 }
 .logomobile {
-  width: 70%;
+  max-width: 128px;
   user-select: none;
   pointer-events: none;
   display: none;
@@ -30,6 +30,9 @@
 .menu {
   display: none;
 }
+.logoLink {
+  margin: 0;
+}
 
 @media (max-width: 1024px) {
   .nav ul {
@@ -43,6 +46,10 @@
   }
   .menu {
     display: block;
-
+  }
+}
+@media (max-width: 407px) {
+  .logomobile {
+    max-width: 90px;
   }
 }
