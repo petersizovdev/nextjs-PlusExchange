@@ -39,7 +39,7 @@
 
 .extra {
   font-size: 1rem;
-  color: var(--green);
+  color: var(--orange);
   margin-left: auto;
   z-index: 99;
 }

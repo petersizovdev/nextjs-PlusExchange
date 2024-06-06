@@ -48,7 +48,7 @@ export function Providers({ children }) {
         <RainbowKitProvider
           locale="ru-RU"
           theme={darkTheme({
-            accentColor: "#55ba6f",
+            accentColor: "#ff8f26",
             accentColorForeground: "#0c0c0c",
             borderRadius: "medium",
             fontStack: "system",

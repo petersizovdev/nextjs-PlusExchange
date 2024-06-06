@@ -2,10 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: 1.5rem auto 10rem auto;
-
   background-color: var(--black-glass);
   max-width: 100%;
-
   border-radius: 1rem;
   gap: 1rem;
   padding: 2rem;
@@ -21,11 +19,9 @@
 }
 .terminal select {
   background-color: var(--black-glass);
-
   border-radius: 1rem;
   padding: 1rem;
   border: 0;
-
   color: var(--white);
 }
 

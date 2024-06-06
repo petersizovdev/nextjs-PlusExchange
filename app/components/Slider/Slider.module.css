@@ -2,18 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  filter: grayscale(40%);
   width: 100%;
   max-height: 35vw;
   border-radius: 1rem;
-  margin: 10rem auto;
+  margin: 0rem auto ;
   background-color: var(--black-glass);
 }
 .slider img {
   width: 100%;
-
-  filter: contrast(110%);
 }
 @media (max-width: 1024px) {
   .slider {

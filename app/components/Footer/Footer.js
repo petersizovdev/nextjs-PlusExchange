@@ -27,7 +27,7 @@ const Footer = () => {
         <span>© All rights reserved</span>
       </div>
       <div className={cn([styles.footerBlock], [styles.right])}>
-        <Link href="https://t.me/PlusEx_bot">
+        <Link href="https://t.me/pvibes2k">
           <span>
             <svg
               width="64"

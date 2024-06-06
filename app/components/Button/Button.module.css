@@ -6,10 +6,11 @@
   transition: border-color 0.3s, box-shadow 0.3s;
   backdrop-filter: blur(5px);
   cursor: pointer;
+  background-color: var(--orange);
 }
 
 .accent {
-  background-color: var(--white);
+  background-color: var(--orange);
   color: var(--black-bg);
 }
 
@@ -22,10 +23,11 @@
   color: #fff;
   transform: scale(1.05);
   transition: all 0.1s;
-  
 }
 .stock:hover {
   scale: 105%;
+  box-shadow: 0 0 5px 2px #ff8f26b7;
+  border-color: var(--orange);
 }
 
 .outlined:hover {
