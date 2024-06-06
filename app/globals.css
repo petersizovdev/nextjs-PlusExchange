@@ -61,9 +61,11 @@ ul {
   color: var(--white);
   z-index: 0;
 }
+html, body {
+  overflow-x: hidden;
+}
 body {
-  position: relative;
-  overflow: hidden;
+  position: relative
 }
 ol,
 ul {
