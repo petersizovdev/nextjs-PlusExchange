@@ -27,13 +27,13 @@ export default function App() {
         className={styles.slider}
       >
         <SwiperSlide>
-          <Image src={Promo1} alt="" />
+          <Image src={Promo1} quality="100" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={Promo2} alt="" />
+          <Image src={Promo2} quality="100" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={Promo3} alt="" />
+          <Image src={Promo3} quality="100" alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

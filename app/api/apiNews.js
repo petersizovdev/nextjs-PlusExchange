@@ -10,7 +10,7 @@ export const getNews = async ({
 }) => {
   try {
     const response = await axios.get(
-      `${BASE_URL}/search?language=ru&keywords=Крипто`,
+      `${BASE_URL}/search?language=en&keywords=Bitcoin`,
       {
         params: {
           apiKey: API_KEY,
@@ -25,5 +25,3 @@ export const getNews = async ({
     console.log(error);
   }
 };
-
-
